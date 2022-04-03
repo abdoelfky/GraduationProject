@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "790924011565",
+    "firebase_url": "https://arduino-f73d3-default-rtdb.firebaseio.com",
+    "project_id": "arduino-f73d3",
+    "storage_bucket": "arduino-f73d3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:790924011565:android:b91d0543a488c5882070a4",
+        "android_client_info": {
+          "package_name": "com.example.arduino_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "790924011565-9gj7hl1qdn13sken0cqk6eetj8ampbg5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_LOws-01SzlSjEQF_bqfYSsj4FAzX4SQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "790924011565-9gj7hl1qdn13sken0cqk6eetj8ampbg5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
