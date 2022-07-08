@@ -3,10 +3,10 @@ import 'package:simple_tooltip/simple_tooltip.dart';
 import'package:sklite/SVM/SVM.dart';
 import'package:sklite/utils/io.dart';
 import'dart:convert';
-import 'package:arduino_app/constants.dart';
+import '../shared/constants.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'constants.dart';
+import '../shared/constants.dart';
 
 var value;
 
@@ -23,21 +23,24 @@ class _UserPageState extends State<UserPage> {
   final Future<FirebaseApp> _future = Firebase.initializeApp();
   final databaseRef = FirebaseDatabase.instance.reference();
 
+
   void printFirebase(){
 
-    Future.delayed(const Duration(milliseconds: 2000), () {
 
-      databaseRef.onValue.listen((Event event) {
-        setState(() {
-          x=[-30.0,-40.0];
-          RSSI=event.snapshot.value;
-          RSSI.forEach((k, v) => x.add((v.toDouble())));
+      databaseRef.onValue.listen((event) {
+        Future.delayed(const Duration(milliseconds: 5000), () {
+          setState(() {
+            x=[];
+            RSSI=event.snapshot.value;
+            RSSI.forEach((k, v) => x.add((v.toDouble())));
+          });
+          print(event.snapshot.value);
+          print('Data: $x');
         });
 
-        print('Data: $x');
+
       });
 
-    });
 
 
   }
@@ -72,7 +75,7 @@ class _UserPageState extends State<UserPage> {
               ),
           ),
           //room1
-          if(value==1)
+          if(value==2)
 
           AnimatedPositioned(
             top: size.height*.21,
@@ -83,7 +86,7 @@ class _UserPageState extends State<UserPage> {
             location(),
 
           ),
-          if(value==2)
+          if(value==1)
 
             AnimatedPositioned(
             top: size.height*.21,
